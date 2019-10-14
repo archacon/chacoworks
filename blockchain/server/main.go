@@ -6,7 +6,7 @@ import (
 	"google.golang.org/grpc"
 
 
-	"github.com/"
+	"github.com/archacon/chacoworks/blockchain/proto"
 )
 func main() {
 	listener, err := net.Listen("tcp", "8080")
