@@ -11,7 +11,7 @@ type Block struct {
 	Data 			string
 }
 
-thpe Blockchain struct {
+type Blockchain struct {
 	Blocks []*Block
 }
 
@@ -23,7 +23,7 @@ func(b *Block) setHash() {
 func (bc *Blockchain) AddBlock(data string) *Block {
 	prevBlock := bc.Blocks[len(bc.Blocks)-1]
 	newBlock := NewBlock(data, prevBlock.Hash)
-	bc.Blocks = append(bc.Blocks, newBLock)
+	bc.Blocks = append(bc.Blocks, newBlock)
 
 	return newBlock
 }
@@ -41,5 +41,6 @@ func NewBlock(data string, prevBlockHash string) *Block {
 		Data: data,
 		PrevBlockHash: prevBlockHash,
 	}
+	block.setHash()
 	return block
 }
